@@ -1,11 +1,11 @@
 import http from '../lib/http';
 
-export function fetchTemperature() {
-    return http.get('/enviroments/temperature')
+export function fetchTemperature(token) {
+    return http.get('/enviroments/temperature', token)
     // return 28.5
 }
 
-export function fetchHumidity() {
-    // return http.get('/enviroment/temperature')
-    return 80
+export function fetchHumidity(token) {
+    return http.get('/enviroments/humidity', token)
+    // return 80
 }

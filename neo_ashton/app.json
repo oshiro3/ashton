@@ -2,7 +2,7 @@
   "expo": {
     "name": "neo_ashton",
     "slug": "neo_ashton",
-    "privacy": "public",
+    "privacy": "unlisted",
     "sdkVersion": "34.0.0",
     "platforms": [
       "ios",
@@ -24,7 +24,9 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": true,
+      "bundleIdentifier": "jp.test.ashton"
+    },
+    "description": ""
   }
 }

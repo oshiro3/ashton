@@ -1,17 +1,21 @@
 import React from 'react';
-import { StyleSheet, Button } from 'react-native';
-import { Container } from 'native-base';
+import { StyleSheet, Text } from 'react-native';
+import { Provider, connect } from 'react-redux';
+import { Container,Button } from 'native-base';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Main from './src/screens/main';
-import { EnviromentScreen } from './src/navigation/navigation';
+import { EnviromentScreen, LoginScreen } from './src/navigation/navigation';
+import store from './src/redux/store';
 
 class App extends React.Component {
   render() {
     return (
+      <Provider store={store}>
         <Container style={styles.container}>
           <Main navigation={this.props.navigation}/>
-        </Container>
+        </Container> 
+      </Provider>
     );
   }
 }
@@ -25,9 +29,10 @@ const MainScreen = {
   },
 };
 
-const AppNavigator = createStackNavigator({
+export const AppNavigator = createStackNavigator({
   MainScreen,
-  EnviromentScreen
+  EnviromentScreen,
+  LoginScreen
 },
 {
   initialRouteName: 'MainScreen',

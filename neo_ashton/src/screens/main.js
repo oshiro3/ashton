@@ -1,24 +1,31 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { StyleSheet } from 'react-native';
-import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Text, Icon, Grid } from 'native-base';
-// import Icon from 'react-native-vector-icons/MaterialIcons';
+import { Container, Footer, FooterTab, Button, Text} from 'native-base';
 import EnviromentButton from '../components/buttons/enviroment_button';
 import WindowButton from '../components/buttons/window_button';
+import Login from '../screens/login';
 
-// const state = 111;
 
-export default class Main extends Component {
-  componentDidMount(){
-    // alert(state);
-  }
+const mapStateToProps = (state) => ({
+  login: state.login,
+});
+
+class Main extends Component {
 
   render() {
+    const { login } = this.props
     return (
       <Container>
-        <Container style={styles.content}>
-            <EnviromentButton navigation={this.props.navigation}/>
-            <WindowButton/>
-        </Container>
+        { login.login ?
+          <Container style={styles.content}>
+              <EnviromentButton navigation={this.props.navigation}/>
+              <WindowButton/>
+          </Container> :
+          <Container style={styles.container}>
+            <Login navigation={this.props.navigation}/>
+          </Container>
+        }
         <Footer>
           <FooterTab>
             <Button full>
@@ -41,3 +48,5 @@ const styles = StyleSheet.create({
     alignItems: 'baseline'
   },
 });
+
+export default connect(mapStateToProps)(Main)
