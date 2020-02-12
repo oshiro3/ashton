@@ -30,7 +30,7 @@ class Enviroment extends Component {
 		loadMoment: true,
 	};
   
-  componentWillMount() {
+  	componentWillMount() {
 		this.fetch()
 	};
 	
@@ -66,37 +66,39 @@ class Enviroment extends Component {
                 <Icon name='explore' type='MaterialIcons' size={40} style={{color: 'black'}}/>
                 <Body>
                   <Text style={{fontSize: 40, paddingRight: 0}}>Enviroment</Text>
-                  {this.state.loadMoment ? <ActivityIndicator size="small" color="#00ff00" /> :
-										<Text note style={{fontSize: 20}}>{moment().tz("Asia/Tokyo").format('MM/DD(dd) HH:mm:ss')}</Text>}
+                  	{this.state.loadMoment ? 
+						<ActivityIndicator size="small" color="#00ff00" /> :
+						<Text note style={{fontSize: 20}}>{moment().tz("Asia/Tokyo").format('MM/DD(dd) HH:mm:ss')
+					}</Text>}
                 </Body>
-								<Button transparent onPress={this.reload}>
-									<Icon type='MaterialIcons' name='cached' style={{fontSize: 40}}/>
-								</Button>
+					<Button transparent onPress={this.reload}>
+						<Icon type='MaterialIcons' name='cached' style={{fontSize: 40}}/>
+					</Button>
               </Left>
             </CardItem>
             <CardItem>
               <Body>
                 <CardItem bordered>
-									<Body>
-										<Text style={{fontSize: 30}}>Temperature</Text>
-										{this.state.loadTemperature ? <ActivityIndicator size="small" color="#00ff00" /> :
-										<Text style={{padding: 10, fontSize: 40}}>{this.state.temperature}℃{"\t"}
-											<Icon type='MaterialIcons' name={'brightness-5'} style={{fontSize: 40, color: 'orange',}}/></Text>}
-									</Body>
+					<Body>
+						<Text style={{fontSize: 30}}>Temperature</Text>
+						{this.state.loadTemperature ? <ActivityIndicator size="small" color="#00ff00" /> :
+						<Text style={{padding: 10, fontSize: 40}}>{this.state.temperature}℃{"\t"}
+							<Icon type='MaterialIcons' name={'brightness-5'} style={{fontSize: 40, color: 'orange',}}/></Text>}
+					</Body>
                 </CardItem>
                 <CardItem bordered>
-									<Body>
-										<Text style={{fontSize: 30}}>Humidity</Text>
-										{this.state.loadHumidity ? <ActivityIndicator size="small" color="#00ff00" /> :
-										<Text style={{padding: 10, fontSize: 40}}>{this.state.humidity}%{"    "}
-											<Icon name='cloud' style={{fontSize: 40, color: 'orange'}}/></Text>}
-									</Body>
+					<Body>
+						<Text style={{fontSize: 30}}>Humidity</Text>
+						{this.state.loadHumidity ? <ActivityIndicator size="small" color="#00ff00" /> :
+						<Text style={{padding: 10, fontSize: 40}}>{this.state.humidity}%{"    "}
+							<Icon name='cloud' style={{fontSize: 40, color: 'orange'}}/></Text>}
+					</Body>
                 </CardItem>
                 <CardItem bordered>
-									<Body>
-										<Text style={{fontSize: 30}}>Dusty</Text>
-										<Text style={{padding: 10, fontSize: 20}}>Development...</Text>
-									</Body>
+					<Body>
+						<Text style={{fontSize: 30}}>Dusty</Text>
+						<Text style={{padding: 10, fontSize: 20}}>Development...</Text>
+					</Body>
                 </CardItem>
               </Body>
             </CardItem>
