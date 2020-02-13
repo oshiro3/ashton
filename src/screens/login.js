@@ -18,20 +18,23 @@ class LoginForm extends Component {
   
   onButtonPress() {
 		this.setState({loading: true})
-    http
-      .post('/auth', data = {
-			  username: this.state.username, password: this.state.password
-		  })
-      .then((res) => {
-        this.props.onSetToken(res.data.access_token)
-        this.props.onSetLogin(true)
-      })
-			.then(() => this.props.navigation.navigate('MainScreen'))
-			.catch((res) => {
-        alert(JSON.stringify(res))
-        this.props.onSetLogin(false)
-      })
-      .finally(() => this.setState({loading: false}));
+    this.setState({loading: false})
+    this.props.onSetLogin(true)
+    this.props.navigation.navigate('MainScreen')
+    // http
+    //   .post('/auth', data = {
+		// 	  username: this.state.username, password: this.state.password
+		//   })
+    //   .then((res) => {
+    //     this.props.onSetToken(res.data.access_token)
+    //     this.props.onSetLogin(true)
+    //   })
+		// 	.then(() => this.props.navigation.navigate('MainScreen'))
+		// 	.catch((res) => {
+    //     alert(JSON.stringify(res))
+    //     this.props.onSetLogin(false)
+    //   })
+    //   .finally(() => this.setState({loading: false}));
   }
   
 	onChangeUserName(username){
