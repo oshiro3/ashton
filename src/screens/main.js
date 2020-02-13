@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 import { Container, Footer, FooterTab, Button, Text} from 'native-base';
 import EnviromentButton from '../components/buttons/enviroment_button';
 import WindowButton from '../components/buttons/window_button';
-import Login from '../screens/login';
+import Login from './login';
 
 
 const mapStateToProps = (state) => ({

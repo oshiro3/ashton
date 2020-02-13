@@ -1,3 +1,10 @@
 {
-  "devToolsPort": 19002
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 13281,
+  "expoServerNgrokUrl": "https://nt-mjg.anonymous.ashton.exp.direct",
+  "packagerNgrokUrl": "https://packager.nt-mjg.anonymous.ashton.exp.direct",
+  "ngrokPid": 13370,
+  "webpackServerPort": 19006
 }
