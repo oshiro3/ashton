@@ -5,7 +5,7 @@ import { Container,Button } from 'native-base';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Main from './src/screens/main';
-import { EnviromentScreen, LoginScreen } from './src/navigation/navigation';
+import { EnviromentScreen, LoginScreen, WindowScreen } from './src/navigation/navigation';
 import store from './src/redux/store';
 
 class App extends React.Component {
@@ -32,6 +32,7 @@ const MainScreen = {
 export const AppNavigator = createStackNavigator({
   MainScreen,
   EnviromentScreen,
+  WindowScreen,
   LoginScreen
 },
 {

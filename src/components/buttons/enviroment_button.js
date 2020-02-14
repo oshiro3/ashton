@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
 class EnviromentButton extends Component {
+  
   render() {
     return (
       <Content style={styles.content}>

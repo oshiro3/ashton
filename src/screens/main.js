@@ -20,7 +20,7 @@ class Main extends Component {
         { login.login ?
           <Container style={styles.content}>
               <EnviromentButton navigation={this.props.navigation}/>
-              <WindowButton/>
+              <WindowButton  navigation={this.props.navigation}/>
           </Container> :
           <Container style={styles.container}>
             <Login navigation={this.props.navigation}/>
