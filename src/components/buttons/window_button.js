@@ -10,9 +10,9 @@ class WindowButton extends Component {
     return (
         <Content style={styles.content}>
             <Button transparent style={{height: 100}} onPress={() => this.props.navigation.navigate('WindowScreen')}>
-              <Icon name='beenhere' size={75} style={{color: 'grey'}}/>
-              <Text style={{paddingLeft:15}}>window</Text>
+              <Icon name='beenhere' size={80} style={{color: 'grey'}}/>
             </Button>
+            <Text style={{paddingLeft:15}}>window</Text>
         </Content>
     );
   }
